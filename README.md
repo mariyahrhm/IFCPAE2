@@ -87,8 +87,7 @@ class diagram:
 | Handles buttons   |
 | Manages session   |
 +---------+---------+
-          |
-          v
+          -->
 +-------------------+
 |   Quiz Logic      |
 |-------------------|
@@ -96,8 +95,7 @@ class diagram:
 | Tracks progress   |
 | Calculates result |
 +---------+---------+
-          |
-          v
+          -->
 +-------------------+
 | Data Access       |
 |-------------------|
