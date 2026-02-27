@@ -78,24 +78,31 @@ This separation makes the code easier to understand, test, and extend in future.
 
 class diagram:
 
-app.py
-│
-├── load_questions()
-│     └── reads questions.csv
-│
-├── save_result()
-│     └── writes to results.csv
-│
-├── Quiz flow logic
-│     ├── current question index
-│     ├── score tracking
-│     └── percentage calculation
-│
-└── Streamlit interface
-      ├── question display
-      ├── answer selection
-      ├── progress bar
-      └── feedback and restart
++-------------------+
+|   Streamlit UI    |
+|-------------------|
+| Displays questions|
+| Handles buttons   |
+| Manages session   |
++---------+---------+
+          |
+          v
++-------------------+
+|   Quiz Logic      |
+|-------------------|
+| Tracks score      |
+| Tracks progress   |
+| Calculates result |
++---------+---------+
+          |
+          v
++-------------------+
+| Data Access       |
+|-------------------|
+| load_questions()  |
+| save_result()     |
+| CSV files         |
++-------------------+
 ---
 
 ## 3. Development Section
