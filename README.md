@@ -9,11 +9,13 @@
 
 ## 1. Introduction
 
-I work in a policy and analytical environment where staff need to understand internal processes, procedures, and good practice. This can be challenging for new starters or when teams change, as information is often spread across documents and informal guidance.
+This project focuses on the design, implementation, testing, and documentation of a Python‑based quiz application intended for use within an organisational setting. The purpose of the application is to provide an interactive and accessible way to assess knowledge of ethical decision‑making through a multiple‑choice quiz. Ethical judgement is an important skill in many professional environments, and the quiz format offers a simple mechanism for reinforcing understanding while providing immediate feedback to users.
 
-To address this, I developed a simple quiz application intended for use by my employer. The purpose of the quiz is to allow staff to test their knowledge in a quick and consistent way, while also providing feedback and recording results. This supports learning, helps identify gaps in understanding, and encourages good practice.
+The application was developed using Python 3 and the Streamlit framework. Streamlit was selected because it enables the creation of web‑based interfaces using minimal frontend code, allowing the focus of the project to remain on core programming concepts rather than user interface complexity. Quiz questions are stored externally in a CSV file, which allows content to be updated easily without modifying the application logic. User results are also saved to a CSV file, providing persistent storage so that scores are retained across application runs.
 
-The application is designed as a minimum viable product (MVP). It focuses on core functionality: presenting questions through a graphical user interface, validating user input, calculating scores, and saving results to a CSV file so they persist between sessions. The system is written in Python using object‑oriented principles and includes documentation, exception handling, and testing to demonstrate a professional development approach.
+Beyond core functionality, the project aims to demonstrate a professional software development process. Version control is managed using GitHub, enabling incremental development and traceability of changes. Unit tests are written to validate key parts of the application logic, and continuous integration is implemented using GitHub Actions to automatically run tests when code changes are pushed. This approach reflects common industry practices and helps ensure reliability and maintainability.
+
+This report documents the design decisions made throughout the project, explains how the application works by referencing key parts of the codebase, and describes the testing and deployment workflow. By combining practical implementation with clear documentation, the project demonstrates both technical competence and an understanding of fundamental software engineering principles.
 
 ---
 
@@ -197,8 +199,10 @@ To run the application:
 
 ## 6. Evaluation Section
 
-Overall, the project successfully demonstrates the development of a Python application using a professional workflow. The GUI and persistent storage work as intended, and the use of object‑oriented programming helped keep the code organised.
+The completed quiz application demonstrates a full end‑to‑end development process, from initial design through to testing, deployment, and documentation. By using Python and Streamlit, the project delivers a functional and user‑friendly application while remaining focused on core programming concepts rather than unnecessary technical complexity. The use of external CSV files for both question storage and result persistence provides a simple and flexible data solution that meets the project requirements effectively.
 
-One area that went well was separating logic from the interface, which made testing easier. The main limitation of the current MVP is that it supports only a small number of questions and limited feedback. With more time, the application could be improved by adding more question sets, better visual design, and more detailed reporting.
+A key strength of the application is the clear separation of responsibilities within the code. Data loading, result saving, quiz logic, and user interface behaviour are handled in distinct sections of the program. This structure improves readability and maintainability and allows individual parts of the application to be modified or extended without affecting the entire system. For example, new quiz topics could be introduced by changing the question file, or additional result analysis could be added by extending the CSV storage logic.
 
-Despite these limitations, the project meets the requirements of the assignment and provides a solid foundation for a workplace training tool.
+The inclusion of automated unit testing and continuous integration further strengthens the project by ensuring that important logic can be validated consistently. Running tests automatically through GitHub Actions reduces the risk of regression errors and demonstrates an awareness of professional development workflows commonly used in real‑world software projects.
+
+Overall, the project successfully meets its objectives by delivering a working quiz application that is well‑structured, testable, and documented. The techniques used in this project could be readily applied to other organisational learning tools or adapted for different subject areas, providing a solid foundation for future development and enhancement.
