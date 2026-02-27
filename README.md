@@ -160,7 +160,7 @@ Manual testing was used for the graphical interface because user interaction and
 
 ### Unit Testing
 
-Unit tests were run using [pytest/unittest].  
+Unit tests were run using unittest
 A screenshot of the tests running successfully is included below.
 
 test run locally:
