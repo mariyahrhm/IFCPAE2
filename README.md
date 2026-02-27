@@ -76,15 +76,53 @@ Score calculation and result evaluation are handled independently of the user in
 Streamlit is used only for displaying questions, collecting user input, and showing feedback.
 This separation makes the code easier to understand, test, and extend in future.
 
+class diagram:
+
+app.py
+│
+├── load_questions()
+│     └── reads questions.csv
+│
+├── save_result()
+│     └── writes to results.csv
+│
+├── Quiz flow logic
+│     ├── current question index
+│     ├── score tracking
+│     └── percentage calculation
+│
+└── Streamlit interface
+      ├── question display
+      ├── answer selection
+      ├── progress bar
+      └── feedback and restart
 ---
 
 ## 3. Development Section
 
-The application is written in Python and organised into logical components. The quiz logic controls the flow of questions and scoring, while the GUI handles user interaction.
+Quiz questions are stored in a CSV file and loaded using the load_questions() function.
 
-storage is implemented using a CSV file. When the quiz is completed, the user’s result is stored in a .csv file. If the file does not exist, it is created automatically.
+<img width="743" height="125" alt="image" src="https://github.com/user-attachments/assets/0631dde5-f0e6-40db-8343-8c427ffa08ce" />
 
-Input validation ensures that users cannot submit invalid or empty answers. Exception handling is used when reading from or writing to the CSV file to prevent crashes and provide clear error messages.
+User results are saved to a CSV file using the save_result() function.
+
+<img width="828" height="224" alt="image" src="https://github.com/user-attachments/assets/2ab7e240-ad2d-4a7b-a2af-4ee6c6eb07b8" />
+
+The quiz state (current question and score) is tracked using Streamlit’s session state.
+
+<img width="578" height="130" alt="image" src="https://github.com/user-attachments/assets/622053f6-3e43-409e-a18b-15643c0d730e" />
+
+Each question is displayed dynamically based on the current index stored in session state.
+
+<img width="1021" height="133" alt="image" src="https://github.com/user-attachments/assets/aa938e2d-8b4c-457d-8f44-facc6586ddfe" />
+
+Users select an answer using a radio button, and their response is checked when they click “Next”.
+
+<img width="718" height="109" alt="image" src="https://github.com/user-attachments/assets/206cf8d5-ef12-4dc9-b104-b241ff1d147c" />
+
+A progress bar is used to show quiz completion status.
+
+<img width="966" height="97" alt="image" src="https://github.com/user-attachments/assets/a6a8bf09-d292-42b6-81bc-bfdc6480f388" />
 
 
 ---
