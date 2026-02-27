@@ -105,9 +105,14 @@ class diagram:
 | save_result()     |
 | CSV files         |
 +-------------------+
+
+This design illustrates how the user interface interacts with the quiz logic, while data access functions handle reading and writing CSV files independently of the interface.
+
 ---
 
 ## 3. Development Section
+
+The development of the application focused on building functionality incrementally. Core features such as loading questions and tracking quiz state were implemented first, followed by result persistence and user feedback. This approach allowed each feature to be tested and validated before adding additional complexity.
 
 Quiz questions are stored in a CSV file and loaded using the load_questions() function.
 
@@ -140,11 +145,7 @@ A progress bar is used to show quiz completion status.
 
 ### Testing Approach
 
-Both manual and automated testing were used.
-
-Manual testing was used to check the graphical interface and user flow, such as starting the quiz, answering questions, and exporting results.
-
-Automated unit tests were used for testable logic such as input validation and scoring.
+Manual testing was used for the graphical interface because user interaction and visual layout are difficult to validate using automated tests. Automated unit testing was used for logic that does not depend on the Streamlit interface, such as score calculation and result handling. This combination ensures both functional correctness and a usable interface.
 
 ### Manual Test Results
 
@@ -202,6 +203,8 @@ To run the application:
 The completed quiz application demonstrates a full end‑to‑end development process, from initial design through to testing, deployment, and documentation. By using Python and Streamlit, the project delivers a functional and user‑friendly application while remaining focused on core programming concepts rather than unnecessary technical complexity. The use of external CSV files for both question storage and result persistence provides a simple and flexible data solution that meets the project requirements effectively.
 
 A key strength of the application is the clear separation of responsibilities within the code. Data loading, result saving, quiz logic, and user interface behaviour are handled in distinct sections of the program. This structure improves readability and maintainability and allows individual parts of the application to be modified or extended without affecting the entire system. For example, new quiz topics could be introduced by changing the question file, or additional result analysis could be added by extending the CSV storage logic.
+
+One limitation of the current implementation is the use of CSV files for storage, which may not scale well for a large number of users. In future iterations, this could be replaced with a database solution, and additional analytics could be added to provide deeper insights into quiz performance.
 
 The inclusion of automated unit testing and continuous integration further strengthens the project by ensuring that important logic can be validated consistently. Running tests automatically through GitHub Actions reduces the risk of regression errors and demonstrates an awareness of professional development workflows commonly used in real‑world software projects.
 
