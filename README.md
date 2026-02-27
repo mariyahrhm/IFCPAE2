@@ -27,7 +27,7 @@ The application uses a simple graphical user interface to guide the user through
 2. Start the quiz  
 3. Answer questions one by one  
 4. View the final score  
-5. Export results to a CSV file  
+5. Results stored as a CSV file  
 
 Screenshots of the GUI and the prototype design are included below.  
 
@@ -52,29 +52,29 @@ results .csv
 - The application validates user input.
 - A score is calculated and displayed at the end.
 - Results are saved to a CSV file.
-- Results can be exported.
 
 **Non‑functional requirements**
 - The application is easy to use for non‑technical staff.
-- Errors are handled gracefully without crashing.
+- Errors are handled without crashing.
 - The code is readable and maintainable.
 
 ### Tech Stack
 
 - Python 3.9+
-- GUI framework: [Tkinter / Streamlit / Flask]
+- GUI framework: Streamlit 
 - CSV file for persistent storage
 - GitHub for version control
-- Pytest (or unittest) for testing
+- unittest for testing
 
 ### Code Design
 
-The code is structured using object‑oriented programming. For example:
-- A class to manage the quiz logic and scoring
-- A class or module to handle CSV storage
-- Separate functions for validating user input
-
-This separation makes the code easier to test and extend.
+The application is organised so that different responsibilities are kept separate within the code.
+Quiz questions are loaded from a CSV file using a dedicated function, keeping data reading separate from the user interface.
+Quiz results are saved to a CSV file using a separate function, allowing results to persist between application runs.
+The quiz flow (current question, score, and progress) is managed using Streamlit session state.
+Score calculation and result evaluation are handled independently of the user interface logic.
+Streamlit is used only for displaying questions, collecting user input, and showing feedback.
+This separation makes the code easier to understand, test, and extend in future.
 
 ---
 
@@ -86,7 +86,6 @@ storage is implemented using a CSV file. When the quiz is completed, the user’
 
 Input validation ensures that users cannot submit invalid or empty answers. Exception handling is used when reading from or writing to the CSV file to prevent crashes and provide clear error messages.
 
-(Insert small, relevant code snippets here if required.)
 
 ---
 
