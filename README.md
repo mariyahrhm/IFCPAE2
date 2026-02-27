@@ -138,6 +138,8 @@ Once all questions have been answered, the final score and percentage are calcul
 
 <img width="966" height="97" alt="image" src="https://github.com/user-attachments/assets/a6a8bf09-d292-42b6-81bc-bfdc6480f388" />
 
+<img width="722" height="234" alt="image" src="https://github.com/user-attachments/assets/627e701e-00c9-496b-98d3-e5ef881aaa54" />
+
 
 ---
 
