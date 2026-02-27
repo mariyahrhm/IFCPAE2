@@ -114,15 +114,15 @@ This design illustrates how the user interface interacts with the quiz logic, wh
 
 The development of the application focused on building functionality incrementally. Core features such as loading questions and tracking quiz state were implemented first, followed by result persistence and user feedback. This approach allowed each feature to be tested and validated before adding additional complexity.
 
-Quiz questions are stored in a CSV file and loaded using the load_questions() function.
+Quiz questions are stored externally in a CSV file, allowing the quiz content to be updated without changing the application code. The questions are loaded using the load_questions() function. This function is responsible only for reading data from the CSV file. Using a dedicated function for this task separates data access from the rest of the application logic and improves maintainability. The use of UTF‑8 encoding ensures compatibility with different operating systems and avoids common CSV formatting issues:
 
 <img width="743" height="125" alt="image" src="https://github.com/user-attachments/assets/0631dde5-f0e6-40db-8343-8c427ffa08ce" />
 
-User results are saved to a CSV file using the save_result() function.
+The function appends results to results.csv, creating the file if it does not already exist. This ensures results persist between application runs and can be reviewed later.
 
 <img width="828" height="224" alt="image" src="https://github.com/user-attachments/assets/2ab7e240-ad2d-4a7b-a2af-4ee6c6eb07b8" />
 
-The quiz state (current question and score) is tracked using Streamlit’s session state.
+The quiz state (current question and score) is tracked using Streamlit’s session state. The current_q variable stores the index of the current question, while score tracks the number of correct answers. This approach allows the quiz to progress correctly as the user clicks buttons, despite Streamlit’s stateless execution model.
 
 <img width="578" height="130" alt="image" src="https://github.com/user-attachments/assets/622053f6-3e43-409e-a18b-15643c0d730e" />
 
@@ -134,7 +134,7 @@ Users select an answer using a radio button, and their response is checked when 
 
 <img width="718" height="109" alt="image" src="https://github.com/user-attachments/assets/206cf8d5-ef12-4dc9-b104-b241ff1d147c" />
 
-A progress bar is used to show quiz completion status.
+Once all questions have been answered, the final score and percentage are calculated and displayed. Conditional logic is used to provide feedback and award badges based on performance, improving user engagement.
 
 <img width="966" height="97" alt="image" src="https://github.com/user-attachments/assets/a6a8bf09-d292-42b6-81bc-bfdc6480f388" />
 
@@ -163,6 +163,7 @@ Unit tests were run using [pytest/unittest].
 A screenshot of the tests running successfully is included below.
 
 test run locally:
+
 <img width="486" height="153" alt="image" src="https://github.com/user-attachments/assets/1b8e6ae6-8b20-405f-b3f6-d8b9cc58c9a2" />
 
 github actions- unittest passing:
