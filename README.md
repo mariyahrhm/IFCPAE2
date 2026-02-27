@@ -115,7 +115,9 @@ Automated unit tests were used for testable logic such as input validation and s
 Unit tests were run using [pytest/unittest].  
 A screenshot of the tests running successfully is included below.
 
-(Insert test screenshot.)
+test run locally:
+<img width="486" height="153" alt="image" src="https://github.com/user-attachments/assets/1b8e6ae6-8b20-405f-b3f6-d8b9cc58c9a2" />
+
 
 ---
 
