@@ -30,7 +30,12 @@ The application uses a simple graphical user interface to guide the user through
 5. Export results to a CSV file  
 
 Screenshots of the GUI and the prototype design are included below.  
-(Insert screenshots here.)
+<img width="1103" height="791" alt="image" src="https://github.com/user-attachments/assets/925a5457-5150-49e8-b46b-4bbd01cb0ab5" />
+<img width="1104" height="704" alt="image" src="https://github.com/user-attachments/assets/7077c2c0-2699-4953-952a-4d6c14f4c89e" />
+<img width="1164" height="833" alt="image" src="https://github.com/user-attachments/assets/9d528ffc-65a6-4cad-b602-fb7c5ff305f9" />
+
+
+
 
 ### Requirements
 
