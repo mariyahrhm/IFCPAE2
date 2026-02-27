@@ -82,7 +82,7 @@ This separation makes the code easier to test and extend.
 
 The application is written in Python and organised into logical components. The quiz logic controls the flow of questions and scoring, while the GUI handles user interaction.
 
-Persistent storage is implemented using a CSV file. When the quiz is completed, the user’s result is written to the file. If the file does not exist, it is created automatically.
+storage is implemented using a CSV file. When the quiz is completed, the user’s result is stored in a .csv file. If the file does not exist, it is created automatically.
 
 Input validation ensures that users cannot submit invalid or empty answers. Exception handling is used when reading from or writing to the CSV file to prevent crashes and provide clear error messages.
 
@@ -98,7 +98,7 @@ Both manual and automated testing were used.
 
 Manual testing was used to check the graphical interface and user flow, such as starting the quiz, answering questions, and exporting results.
 
-Automated unit tests were used for testable logic such as input validation and scoring. These tests focus on pure functions that return the same output for the same input.
+Automated unit tests were used for testable logic such as input validation and scoring.
 
 ### Manual Test Results
 
@@ -128,6 +128,7 @@ github actions- unittest failing:
 
 <img width="349" height="190" alt="image" src="https://github.com/user-attachments/assets/e6f4a54a-579e-4a24-8d16-bf5dc98dc7a6" />
 
+<img width="696" height="327" alt="image" src="https://github.com/user-attachments/assets/e8a79dd1-0926-49c2-bdc5-27a4dfe63fca" />
 
 
 ---
@@ -141,13 +142,12 @@ To run the application:
 2. Download the repository.
 3. Run the main application file.
 4. Follow the on‑screen instructions to complete the quiz.
-5. Use the export option to save results.
+5. Results stored in .csv file that is automatically created.
 
 ### Technical Documentation
 
 - Tests can be run locally using the test framework.
 - The CSV file stores quiz results and is updated after each run.
-- Input validation functions are written so they can be tested independently.
 
 ---
 
