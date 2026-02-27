@@ -187,28 +187,43 @@ github actions- unittest failing:
 
 ### User Documentation
 
+The quiz application is designed to be simple to run and use, even for users with limited technical knowledge. The steps below describe how an end user can run the application and interact with it.
+
 To run the application:
-1. Ensure Python 3.9 or above is installed.
-2. Download the repository.
-3. Run the main application file.
-4. Follow the on‑screen instructions to complete the quiz.
-5. Results stored in .csv file that is automatically created.
+1. Ensure that Python version 3.9 or above is installed on the system.
+2. Download or clone the project repository from GitHub into VScode.
+3. Navigate to the project directory and run the main application file using Streamlit- in the terminal you can run: 'streamlit run app.py'
+4. Once the application starts, follow the on‑screen instructions to complete the quiz by answering each question in turn.
+5. After completing the quiz, the final score and percentage result are displayed, and the results are automatically saved to a CSV file.
+
+The application interface guides the user through the quiz using clear visual elements such as radio buttons, progress bars, and feedback messages. No manual configuration is required, and all results are saved automatically without user intervention. This design ensures the application is accessible and suitable for use by non‑technical staff in an organisational setting.
 
 ### Technical Documentation
 
-- Tests can be run locally using the test framework.
-- The CSV file stores quiz results and is updated after each run.
+-The application is implemented in a single app.py file using Python and the Streamlit framework.
+
+-Quiz questions are stored in a CSV file (questions.csv) and loaded at runtime using a dedicated function, separating data access from application logic.
+
+-Quiz results are written to a CSV file (results.csv) using a separate function, providing persistent storage across application runs.
+
+-Quiz progress and scoring are managed using Streamlit’s session state, allowing the application to track user progress.
+
+-Core quiz logic (such as score updates and question progression) is kept separate from the user interface code to improve readability and maintainability.
+
+-Unit tests are included to validate testable logic such as scoring and input handling.
+
+-Tests can be run locally using the Python test framework from the command line (python -m unittest discover -s tests).
+
+-Continuous integration is configured using GitHub Actions to automatically run unit tests whenever changes are pushed to the repository.
 
 ---
 
 ## 6. Evaluation Section
 
-The completed quiz application demonstrates a full end‑to‑end development process, from initial design through to testing, deployment, and documentation. By using Python and Streamlit, the project delivers a functional and user‑friendly application while remaining focused on core programming concepts rather than unnecessary technical complexity. The use of external CSV files for both question storage and result persistence provides a simple and flexible data solution that meets the project requirements effectively.
+The completed quiz application demonstrates a full end‑to‑end development process, from initial design through to implementation, testing, deployment, and documentation. By using Python and the Streamlit framework, the project delivers a functional and user‑friendly application while remaining focused on core programming concepts rather than unnecessary technical complexity. Streamlit proved to be an effective choice for rapidly developing an interactive interface, allowing the project to prioritise application logic, data handling, and testing practices. The use of external CSV files for both question storage and result persistence provides a simple and flexible data solution that meets the project requirements effectively and supports easy content updates without modifying the underlying code.
 
-A key strength of the application is the clear separation of responsibilities within the code. Data loading, result saving, quiz logic, and user interface behaviour are handled in distinct sections of the program. This structure improves readability and maintainability and allows individual parts of the application to be modified or extended without affecting the entire system. For example, new quiz topics could be introduced by changing the question file, or additional result analysis could be added by extending the CSV storage logic.
+A key strength of the application is the clear separation of responsibilities within the code. Data loading, result saving, quiz logic, and user interface behaviour are handled in distinct sections of the program. This structure improves readability and maintainability and allows individual parts of the application to be modified or extended without affecting the entire system. For example, new quiz topics could be introduced by changing the question file, or additional result analysis could be added by extending the CSV storage logic. This modular approach reflects good software engineering practice and supports long‑term sustainability of the codebase.
 
-The use of CSV files for both question storage and result persistence was another deliberate choice. CSV files are simple, human‑readable, and easy to modify, making them suitable for a small‑scale organisational quiz. Questions can be updated without changing the application code, and results can be reviewed using common tools such as spreadsheet software. However, this approach also introduces limitations. CSV files do not scale well when multiple users access the application simultaneously, and they lack built‑in validation and security features. In a larger deployment, a database solution such as SQLite or PostgreSQL would provide improved reliability, concurrency handling, and data integrity.
+The inclusion of automated unit testing and continuous integration further strengthens the project by ensuring that important logic can be validated consistently. Running tests automatically through GitHub Actions reduces the risk of regression errors and demonstrates an awareness of professional development workflows commonly used in real‑world software projects. Combining automated testing with manual interface testing ensured that both the internal logic and the user experience were thoroughly validated.
 
-The inclusion of automated unit testing and continuous integration further strengthens the project by ensuring that important logic can be validated consistently. Running tests automatically through GitHub Actions reduces the risk of regression errors and demonstrates an awareness of professional development workflows commonly used in real‑world software projects.
-
-Overall, the project successfully meets its objectives by delivering a working quiz application that is well‑structured, testable, and documented. The techniques used in this project could be readily applied to other organisational learning tools or adapted for different subject areas, providing a solid foundation for future development and enhancement.
+Overall, the project successfully meets its objectives by delivering a working quiz application that is well‑structured, testable, and clearly documented. The techniques used in this project—such as separation of concerns, persistent storage, automated testing, and continuous integration—are transferable to a wide range of organisational applications. As a result, this project provides a solid foundation for future development and demonstrates a strong understanding of both practical programming and fundamental software engineering principles.
