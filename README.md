@@ -80,35 +80,37 @@ This separation makes the code easier to understand, test, and extend in future.
 
 class diagram:
 
-+-------------------+
-|   Streamlit UI    |
-|-------------------|
-| Displays questions|
-| Handles buttons   |
-| Manages session   |
-+---------+---------+
+```mermaid
+classDiagram
+    class App {
+        app.py
+    }
 
-           |
-           v
+    class StreamlitUI {
+        display questions
+        collect user input
+        show progress
+        show results
+    }
 
-+-------------------+
-|   Quiz Logic      |
-|-------------------|
-| Tracks score      |
-| Tracks progress   |
-| Calculates result |
-+---------+---------+
-      
-           |
-           v
+    class QuizLogic {
+        current question index
+        score tracking
+        answer checking
+        percentage calculation
+    }
 
-+-------------------+
-| Data Access       |
-|-------------------|
-| load_questions()  |
-| save_result()     |
-| CSV files         |
-+-------------------+
+    class DataHandling {
+        load_questions()
+        save_result()
+        questions.csv
+        results.csv
+    }
+
+    App --> StreamlitUI
+    StreamlitUI --> QuizLogic
+    QuizLogic --> DataHandling
+```
 
 This design illustrates how the user interface interacts with the quiz logic, while data access functions handle reading and writing CSV files independently of the interface.
 
