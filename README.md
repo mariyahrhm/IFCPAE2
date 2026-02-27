@@ -118,6 +118,16 @@ A screenshot of the tests running successfully is included below.
 test run locally:
 <img width="486" height="153" alt="image" src="https://github.com/user-attachments/assets/1b8e6ae6-8b20-405f-b3f6-d8b9cc58c9a2" />
 
+github actions- unittest passing:
+
+<img width="388" height="259" alt="image" src="https://github.com/user-attachments/assets/17baefa3-61a5-421e-87bf-8ef5835b4d8b" />
+
+<img width="1342" height="620" alt="image" src="https://github.com/user-attachments/assets/43f38210-2556-4455-86e6-5d652ae98900" />
+
+github actions- unittest failing:
+
+<img width="369" height="238" alt="image" src="https://github.com/user-attachments/assets/17c59053-237c-412d-be35-82ff93c919fd" />
+
 
 ---
 
