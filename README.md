@@ -155,9 +155,8 @@ Manual testing was used for the graphical interface because user interaction and
 |---------|------------|--------|
 | MT1 | Application opens correctly | Pass |
 | MT2 | Quiz starts and questions display | Pass |
-| MT3 | Invalid input is rejected | Pass |
-| MT4 | Score is calculated correctly | Pass |
-| MT5 | Results export to CSV | Pass |
+| MT3 | Score is calculated correctly | Pass |
+| MT4 | Results export to CSV | Pass |
 
 ### Unit Testing
 
